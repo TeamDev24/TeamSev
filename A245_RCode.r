@@ -18,3 +18,14 @@ football_data$GoalsPerMatch <- football_data$Goals / football_data$Apps  # Calcu
 
 # Remove rows with NA values
 football_data <- na.omit(football_data)
+
+# Load ggplot2
+library(ggplot2)
+
+# Histogram for Age
+ggplot(football_data, aes(x = Age)) +
+  geom_histogram(bins = 30, fill = "skyblue", color = "black") +
+  labs(title = "Distribution of Player Age",
+       x = "Age (Years)",
+       y = "Frequency") +
+  theme_minimal()
